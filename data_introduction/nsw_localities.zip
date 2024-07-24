@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tesla Deaths (Updated 2023) | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="An In-depth Look into Driver, Occupant, and Pedestrian Deaths" />
+    <meta name="keywords" content="automobiles and vehicles,data visualization" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" type="text/javascript">
+    window["pageRequestStartTime"] = 1721211397709;
+    window["pageRequestEndTime"] = 1721211397796;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" id="gsi-client" src="https://accounts.google.com/gsi/client" async defer></script>
+  <script nonce="rAlbDsCzlJV1k9ff9wrzwg==">window.KAGGLE_JUPYTERLAB_PATH = "/static/assets/jupyterlab/jupyterlab-index-0d268d5d94a92d715e7c.html";</script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+
+    <link rel="canonical" href="https://www.kaggle.com/datasets/thedevastator/tesla-accident-fatalities-analysis-and-statistic" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=dne" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=d254b8e655133188a703" />
+
+  
+    
+ 
+      <script nonce="rAlbDsCzlJV1k9ff9wrzwg==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="rAlbDsCzlJV1k9ff9wrzwg==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T7QHS60L4Q', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" async src="https://www.googletagmanager.com/gtag/js?id=G-T7QHS60L4Q"></script>
+
+  
+    
+    <meta property="og:url" content="https://www.kaggle.com/datasets/thedevastator/tesla-accident-fatalities-analysis-and-statistic" />
+    <meta property="og:title" content="Tesla Deaths (Updated 2023)" />
+    <meta property="og:description" content="An In-depth Look into Driver, Occupant, and Pedestrian Deaths" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/2779533/4932101/f6b88ed5b59a7e3c1202559e8f6ca32d/dataset-card.png?t=2023-02-01-15-48-26" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+            <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Tesla Deaths (Updated 2023)","description":"_____\n# Tesla Deaths\n### An In-depth Look into Driver, Occupant, and Pedestrian Deaths\nBy  [[source]](https://zenodo.org/record/7003969#.Y7FJBtJBwUE)\n_____\n\n### About this dataset\n&gt; This dataset reveals an in-depth analysis of tragic Tesla vehicle accidents that have resulted in the death of a driver, occupant, cyclist, or pedestrian. It contains an extensive amount of information related to the fatal incidents including the date and location of each crash, model type involved and if Autopilot was enabled at the time. Every case is given its own unique identifier for easy reference and thorough review. Now is your chance to dive deep into these records to truly understand what happened during those tragic events and how we can prevent them from happening again\n\n### More Datasets\n&gt; For more datasets, click [here](https://www.kaggle.com/thedevastator/datasets).\n\n### Featured Notebooks\n&gt; - 🚨 **Your notebook can be here!** 🚨! \n\n### How to use the dataset\n&gt; This dataset provides a comprehensive overview of the Tesla vehicle accidents that have resulted in fatalities. It includes details on the date and location of each incident, model involved, crash description, fatalities, and Autopilot usage. This dataset can be used to analyze the frequency and locations of these fatal accidents as well as gain valuable insights into potential safety risks associated with driving/operating Tesla vehicles. \n&gt; \n&gt; To begin your analysis with this dataset, start by reading through the information contained in each column: Case # (unique identifier for each case), Year (year of incident), Date (date of incident), Country (country where the accident occurred), State (state where the accident occurred), Description (description of crash), Model (model of Tesla vehicle involved) Source(source). All columns are mandatory for analysis. \n&gt; \n&gt; Once you have familiarized yourself with this data set, consider looking at how many fatal accidents there have been over time by creating line graphs to show trends over years or states. You may also decide to review incidents based on geographic location or model type to determine which locations or model types may require further investigation and testing in terms of Tesla's safety features. \n&gt; Additionally consider using descriptive analytics such as means and medians to determine if certain models are more prone to accidents than others compared against one another; while also exploring if Autopilot feature usage has any correlation to higher rates/ numbers involving fatalities . \n&gt; \n&gt;  Using this data set can help increase awareness about potential safety risk related issues associated with driving/ operating a Tesla vehicle allowing individuals involved production side decisions or investing decisions have a better understanding when entering such fields . We do recommend however that when conducting your analysis , it’s important understand proper ways for handling missing data points so that users can get an accurate picture related current issues surrounding vehicular mistakes involving teslas vehicles \n\n### Research Ideas\n&gt; - Estimating the safety risk of Autopilot feature usage in different countries and states. By analyzing the differences in fatalities between Tesla vehicles operating with and without Autopilot, researchers can infer risks associated with Autopilot use. \n&gt; - Examining the relation between driver / occupant fatalities and Tesla vehicle models over time. Through observation of trends in model-specific fatalities across years, engineers may be able to identify vulnerabilities or safety features that should be improved upon in the next version of a car model. \n&gt; - Creating predictive models to assess crash probability per country or state based on uncontrollable factors such as road environment or traffic conditions by analyzing large numbers of reported accidents for which there were no fatalities but had similar characteristics (time of day, weather conditions, speed limit etc). Technological developments such as self-driving cars could potentially benefit from this type of predictive evaluation method to enhance their safety by improving preventive measures ahead of accidents occurring\n\n### Acknowledgements\n&gt; If you use this dataset in your research, please credit the original authors.\n&gt; [Data Source](https://zenodo.org/record/7003969#.Y7FJBtJBwUE)\n&gt; \n&gt;\n\n\n### License\n&gt; \n&gt; \n&gt; **License: [CC0 1.0 Universal (CC0 1.0) - Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/)**\n&gt; No Copyright - You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. [See Other Information](https://creativecommons.org/publicdomain/zero/1.0/).\n\n### Columns\n\n**File: Tesla Deaths - Deaths (3).csv**\n| Column name        | Description                                                    |\n|:-------------------|:---------------------------------------------------------------|\n| **Case #**         | Unique identifier for each case. (String)                      |\n| **Year**           | Year of the accident. (Integer)                                |\n| **Date**           | Date of the accident. (Date)                                   |\n| **Country**        | Country where the accident occurred. (String)                  |\n| **State**          | State where the accident occurred. (String)                    |\n| **Description**    | Description of the accident. (String)                          |\n| **Tesla driver**   | Whether the Tesla driver was killed in the accident. (Boolean) |\n| **Tesla occupant** | Whether a Tesla occupant was killed in the accident. (Boolean) |\n| **Model**          | Model of the Tesla vehicle involved in the accident. (String)  |\n| **Source**         | Source of the data. (String)                                   |\n\n### Acknowledgements\n&gt; If you use this dataset in your research, please credit the original authors.\n&gt; If you use this dataset in your research, please credit [](https://zenodo.org/record/7003969#.Y7FJBtJBwUE).\n\n","url":"https://www.kaggle.com/thedevastator/tesla-accident-fatalities-analysis-and-statistic","version":3,"keywords":["subject, science and technology, transportation, automobiles and vehicles","technique, data visualization"],"license":{"@type":"CreativeWork","name":"CC0: Public Domain","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"identifier":["2779533"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"The Devastator","url":"https://www.kaggle.com/thedevastator","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/10654180-kg.png"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/thedevastator/tesla-accident-fatalities-analysis-and-statistic/download?datasetVersionNumber=3","contentSize":"90953 bytes"}],"commentCount":3,"dateModified":"2023-02-01T15:41:47.323Z","discussionUrl":"https://www.kaggle.com/thedevastator/tesla-accident-fatalities-analysis-and-statistic/discussion","alternateName":"An In-depth Look into Driver, Occupant, and Pedestrian Deaths","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/2779533/4932101/f6b88ed5b59a7e3c1202559e8f6ca32d/dataset-card.png?t=2023-02-01-15-48-26","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":3},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":3891},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":21231},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":61}]}</script>
+        
+
+  
+    
+
+  
+    
+
+
+    <script nonce="rAlbDsCzlJV1k9ff9wrzwg==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="rAlbDsCzlJV1k9ff9wrzwg==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" src="/static/assets/runtime.js?v=0b56c215660077412adc"></script>
+  <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" src="/static/assets/vendor.js?v=7e34bd896ca489421a2c"></script>
+  <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" src="/static/assets/app.js?v=6bf379819956e8a2755c"></script>
+    <script nonce="rAlbDsCzlJV1k9ff9wrzwg==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+<body>
+<main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+
+<div id="site-body" class="hide">
+    
+
+
+<script nonce="rAlbDsCzlJV1k9ff9wrzwg==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="rAlbDsCzlJV1k9ff9wrzwg==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    // Always use the production asset in local dev, which is served from GCS. We tried to proxy and / or serve this
+    // in a better way in localhost, but it didn't work out. See b/328073416#comment8 for details.
+    const forceProdHost = window.location.hostname === "localhost";
+    lib.src = `${forceProdHost ? "https://www.kaggle.com" : ""}/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
